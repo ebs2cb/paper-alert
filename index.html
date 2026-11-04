@@ -1,0 +1,56 @@
+<!doctype html><html lang="ja" data-theme="light"><head><meta charset="utf-8"><base target="_top"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Back Numbers · Weekly Paper Digest</title><script>(function(){var t=null;try{t=localStorage.getItem('pd-theme');}catch(e){}if(!t){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script><style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#0f172a;--sub:#64748b;--faint:#94a3b8;--line:#e2e8f0;--acc:#4f46e5;--acc2:#0ea5e9;--t3:#10b981;--t2:#3b82f6;--t1:#94a3b8;--mark:#fde68a;--shadow:rgba(15,23,42,.08)}
+:root[data-theme=dark]{--bg:#0b1020;--card:#141a2e;--ink:#e6e9f5;--sub:#9aa7c4;--faint:#6b7898;--line:#252d48;--acc:#8b87ff;--acc2:#38bdf8;--mark:#6b5b12;--shadow:rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 Inter,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px 60px}
+header{background:linear-gradient(135deg,#4f46e5,#0ea5e9);color:#fff;padding:26px 0 44px;margin-bottom:-24px}
+header .wrap{padding-bottom:0}header small{opacity:.85;letter-spacing:.08em;text-transform:uppercase;font-size:11px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a,.nav button{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 12px;font-size:12px;text-decoration:none;cursor:pointer;font-family:inherit}
+.nav a:hover,.nav button:hover{background:rgba(255,255,255,.28)}
+header h1{margin:6px 0 4px;font-size:28px;letter-spacing:-.01em}header p{margin:0;opacity:.92;font-size:13px}
+.bar{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;box-shadow:0 6px 24px var(--shadow);position:sticky;top:8px;z-index:5}
+.bar input,.bar select{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:7px 10px;font:inherit;font-size:13px}
+.bar input{flex:1;min-width:150px}.bar .cnt{font-size:12px;color:var(--sub);margin-left:auto}
+.jumps{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+.jump{border:1px solid var(--acc);background:transparent;color:var(--acc);border-radius:999px;padding:3px 12px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.jump b{background:var(--acc);color:#fff;border-radius:999px;padding:0 7px;margin-left:3px;font-size:11px}
+.jump:hover{background:var(--acc);color:#fff}.jump:hover b{background:#fff;color:var(--acc)}.jump.zero{opacity:.4}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.chip,.btn{border:1px solid var(--line);background:transparent;color:var(--sub);border-radius:999px;padding:3px 11px;font-size:12px;cursor:pointer;font-family:inherit}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}.btn{border-radius:9px;color:var(--ink);padding:6px 11px}
+.sec{margin-top:26px}
+.sec h2{display:flex;align-items:center;gap:8px;margin:0 0 4px;font-size:18px;letter-spacing:-.01em;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.sec h2 .cn{font-size:12px;font-weight:600;background:var(--acc);color:#fff;border-radius:999px;padding:0 9px}
+.sec h2 .totop{margin-left:auto;border:1px solid var(--line);background:transparent;color:var(--sub);border-radius:999px;padding:1px 10px;font-size:11.5px;cursor:pointer;font-family:inherit;font-weight:400}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--t1);border-radius:12px;margin:10px 0;transition:box-shadow .2s}
+.card.t3{border-left-color:var(--t3)}.card.t2{border-left-color:var(--t2)}
+.card:hover,.card[open]{box-shadow:0 8px 26px var(--shadow)}
+summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;padding:12px 14px}summary::-webkit-details-marker{display:none}
+.badge{flex:none;min-width:30px;height:26px;padding:0 7px;border-radius:13px;background:var(--t1);color:#fff;font-weight:700;font-size:12px;display:grid;place-items:center;margin-top:2px}
+.t3 .badge{background:var(--t3)}.t2 .badge{background:var(--t2)}
+.head{flex:1;min-width:0}.meta{font-size:11.5px;color:var(--sub)}.meta b{color:var(--ink);font-weight:600}
+.title{font-weight:650;line-height:1.4;margin:1px 0 2px}.au{font-size:11.5px;color:var(--faint);line-height:1.4}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 2px}
+.chev{color:var(--sub);transition:transform .2s;margin-top:4px}details[open] .chev{transform:rotate(180deg)}
+.body{padding:2px 14px 14px 56px;border-top:1px dashed var(--line)}
+.cols{display:grid;grid-template-columns:1fr;gap:14px;padding-top:12px}
+@media(min-width:780px){.cols.two{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.body{padding-left:14px}}
+.body h4{margin:0 0 4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}.body p{margin:0;font-size:13.5px}
+.foot{margin-top:12px;font-size:12px;color:var(--sub);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.foot a{color:var(--acc);text-decoration:none;border:1px solid var(--line);border-radius:7px;padding:2px 8px}
+.tag{background:var(--bg);border-radius:999px;padding:1px 8px}.tag.kw{border:1px solid var(--mark)}
+.empty{text-align:center;color:var(--sub);padding:40px 0}
+.issue{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.issue:hover{border-color:var(--acc)}.issue b{font-size:17px}.issue .n{float:right;color:var(--acc);font-weight:700}.issue ul{margin:6px 0 0;padding-left:18px;color:var(--sub);font-size:13px}
+.note{font-size:11px;color:var(--faint);margin-top:2px}
+</style></head><body><header><div class="wrap"><div class="top"><small>Weekly Paper Digest</small><div class="nav"><a href="https://script.google.com/macros/s/AKfycbzikrOpnX5a0ZGukogOczVIAgcAB39B3QvIGUy3P851sntJy7QduRlA24MA2cqJUqy3UA/exec">⚙ 設定</a><button id="theme" type="button">🌙 ダーク</button></div></div><h1>Back Numbers</h1><p>週ごとのダイジェスト一覧</p></div></header><div class="wrap"><a class="issue" href="https://ebs2cb.github.io/paper-alert/issues/2026-11-04-test.html"><span class="n">201 件</span><b>2026-11-04-test</b> <span class="tag">TEST</span><ul><li>Can science make your dog live longer? Longevity craze comes to pets.</li><li>Big dogs age faster than little ones - rogue 'jumping genes' might be to blame.</li><li>Briefing Chat: An invisible tattoo that appears under UV light - and then disappears.</li></ul></a></div><script>
+var tb=document.getElementById('theme');
+function paint(){if(tb)tb.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀ ライト':'🌙 ダーク';}
+if(tb)tb.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('pd-theme',n);}catch(e){}paint();};
+paint();
+</script></body></html>
