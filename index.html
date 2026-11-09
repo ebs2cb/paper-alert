@@ -48,6 +48,17 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 2px}
 .issue{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
 .issue:hover{border-color:var(--acc)}.issue b{font-size:17px}.issue .n{float:right;color:var(--acc);font-weight:700}.issue ul{margin:6px 0 0;padding-left:18px;color:var(--sub);font-size:13px}
 .note{font-size:11px;color:var(--faint);margin-top:2px}
+.btn.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.star{flex:none;background:none;border:0;padding:0 2px;font-size:19px;line-height:1;color:var(--faint);cursor:pointer;margin-top:1px;font-family:inherit}
+.star:hover,.star.on{color:#f59e0b}
+.fline{display:flex;gap:6px;align-items:center;margin-top:2px;font-size:11.5px;white-space:nowrap;overflow:hidden}
+.ftag{flex:none;background:var(--bg);color:var(--acc);border:1px solid var(--line);border-radius:999px;padding:0 7px;font-size:11px}
+.fm{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--sub)}
+.fedit{display:flex;gap:8px;padding-top:10px}
+.fedit input{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:4px 9px;font:inherit;font-size:12.5px;min-width:0}
+.fedit .ft{flex:0 1 240px}.fedit .fmm{flex:1}
+#favpanel{position:fixed;top:60px;right:max(16px,3vw);z-index:60;width:min(300px,calc(100vw - 32px));background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 10px 30px var(--shadow);font-size:13px}
+#favpanel .fpb{display:flex;gap:8px;margin-top:8px}#favpanel .fpn{color:var(--sub);font-size:12px;margin-top:4px}#favpanel .bad{color:#dc2626}
 
 .spanel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:0 6px 24px var(--shadow);display:grid;gap:9px}
 .spanel .srow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -62,17 +73,101 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 2px}
 .more{display:block;margin:16px auto}
 .rnote{color:var(--sub);font-size:13px;margin:6px 0}
 .tagsec{font-size:11px;background:var(--bg);border-radius:999px;padding:0 7px;margin-left:2px}
-</style></head><body><header><div class="wrap"><div class="top"><small>Weekly Paper Digest</small><div class="nav"><a href="https://script.google.com/macros/s/AKfycbyoQz6EIJKrkMwZYOF3djUEOhMDsc_q-I1NExerBFa2/dev">⚙ 設定</a><button id="theme" type="button">🌙 ダーク</button></div></div><h1>Back Numbers</h1><p>週ごとのダイジェストと、過去の論文の検索</p></div></header><div class="wrap"><div class="spanel" id="spanel"><div class="srow"><input type="text" id="sq" placeholder="キーワード（タイトル・抄録）例: H3K4me3 &quot;stem cell&quot; -cancer" autocomplete="off"><button class="btn" id="sclear" type="button">クリア</button></div><div class="srow"><input type="text" id="sau" placeholder="著者名  例: Kimmins S, Sasaki H" autocomplete="off"><input type="text" id="sj" placeholder="雑誌名  例: Nat Commun, Science" autocomplete="off"></div><div class="srow"><span class="lab">期間</span><span class="chip" data-p="1m">1か月</span><span class="chip on" data-p="3m">3か月</span><span class="chip" data-p="1y">1年</span><span class="chip" data-p="all">すべて</span><input type="date" id="sfrom" aria-label="開始日"><span class="sep">〜</span><input type="date" id="sto" aria-label="終了日"></div><div class="srow"><select id="ssec"><option value="">すべてのセクション</option><option value="original">原著論文</option><option value="news">ニュース・コメント等</option><option value="review">Review論文</option><option value="other">その他</option></select><select id="stopic"><option value="">すべてのトピック</option></select><select id="ssort"><option value="date">新しい順</option><option value="prio">優先度順</option><option value="impact">インパクトファクター順</option><option value="journal">雑誌名順</option></select></div><div class="sstat" id="sstat">検索データを読み込み中…</div></div><div id="results" hidden></div><div id="issues"><h2 class="rhead">バックナンバー</h2><a class="issue" href="https://ebs2cb.github.io/paper-alert/issues/2026-11-09-test.html"><span class="n">217 件</span><b>2026-11-09-test</b> <span class="tag">TEST</span><ul><li>Can science make your dog live longer? Longevity craze comes to pets.</li><li>Big dogs age faster than little ones - rogue 'jumping genes' might be to blame.</li><li>Briefing Chat: An invisible tattoo that appears under UV light - and then disappears.</li></ul></a><a class="issue" href="https://ebs2cb.github.io/paper-alert/issues/2026-11-09.html"><span class="n">73 件</span><b>2026-11-09</b><ul><li>Nondisruptive 3D profiling of combinations of epigenetic marks in single cells.</li><li>Enhanced cfDNA methylation profiling by detection and correction of jagged ends.</li><li>Longitudinal single-cell profiling of breast tumors highlights immune and epigenetic mechanisms associated with sensitivity to aromatase inhibitors.</li></ul></a><a class="issue" href="https://ebs2cb.github.io/paper-alert/issues/2026-11-04-test.html"><span class="n">201 件</span><b>2026-11-04-test</b> <span class="tag">TEST</span><ul><li>Epigenetic aging and transposon dysregulation reflect size-related lifespan compression in dogs.</li><li>Somatic epimutations cap genetic determinism in the human diploid chromatin epigenome.</li><li>A telomere-to-telomere map of somatic mutation burden and functional impact in a cancer.</li></ul></a></div></div><script>
+.chk{display:inline-flex;gap:5px;align-items:center;font-size:13px;color:var(--ink);cursor:pointer}
+.spanel input[type=checkbox]{padding:0;width:15px;height:15px}
+</style></head><body><header><div class="wrap"><div class="top"><small>Weekly Paper Digest</small><div class="nav"><a href="https://script.google.com/macros/s/AKfycbyoQz6EIJKrkMwZYOF3djUEOhMDsc_q-I1NExerBFa2/dev">⚙ 設定</a><button id="favbtn" type="button" title="お気に入りの管理（書き出し・読み込み）">★ 0</button><button id="theme" type="button">🌙 ダーク</button></div></div><h1>Back Numbers</h1><p>週ごとのダイジェストと、過去の論文の検索</p></div></header><div class="wrap"><div class="spanel" id="spanel"><div class="srow"><input type="text" id="sq" placeholder="キーワード（タイトル・抄録）例: H3K4me3 &quot;stem cell&quot; -cancer" autocomplete="off"><button class="btn" id="sclear" type="button">クリア</button></div><div class="srow"><input type="text" id="sau" placeholder="著者名  例: Kimmins S, Sasaki H" autocomplete="off"><input type="text" id="sj" placeholder="雑誌名  例: Nat Commun, Science" autocomplete="off"></div><div class="srow"><span class="lab">期間</span><span class="chip" data-p="1m">1か月</span><span class="chip on" data-p="3m">3か月</span><span class="chip" data-p="1y">1年</span><span class="chip" data-p="all">すべて</span><input type="date" id="sfrom" aria-label="開始日"><span class="sep">〜</span><input type="date" id="sto" aria-label="終了日"></div><div class="srow"><select id="ssec"><option value="">すべてのセクション</option><option value="original">原著論文</option><option value="news">ニュース・コメント等</option><option value="review">Review論文</option><option value="other">その他</option></select><select id="stopic"><option value="">すべてのトピック</option></select><select id="ssort"><option value="date">新しい順</option><option value="prio">優先度順</option><option value="impact">インパクトファクター順</option><option value="journal">雑誌名順</option></select><label class="chk"><input type="checkbox" id="sfav"> ★のみ</label><select id="sftag"><option value="">すべてのタグ</option></select></div><div class="sstat" id="sstat">検索データを読み込み中…</div></div><div id="results" hidden></div><div id="issues"><h2 class="rhead">バックナンバー</h2><a class="issue" href="https://ebs2cb.github.io/paper-alert/issues/2026-11-09-test.html"><span class="n">217 件</span><b>2026-11-09-test</b> <span class="tag">TEST</span><ul><li>Can science make your dog live longer? Longevity craze comes to pets.</li><li>Big dogs age faster than little ones - rogue 'jumping genes' might be to blame.</li><li>Briefing Chat: An invisible tattoo that appears under UV light - and then disappears.</li></ul></a><a class="issue" href="https://ebs2cb.github.io/paper-alert/issues/2026-11-09.html"><span class="n">73 件</span><b>2026-11-09</b><ul><li>Nondisruptive 3D profiling of combinations of epigenetic marks in single cells.</li><li>Enhanced cfDNA methylation profiling by detection and correction of jagged ends.</li><li>Longitudinal single-cell profiling of breast tumors highlights immune and epigenetic mechanisms associated with sensitivity to aromatase inhibitors.</li></ul></a><a class="issue" href="https://ebs2cb.github.io/paper-alert/issues/2026-11-04-test.html"><span class="n">201 件</span><b>2026-11-04-test</b> <span class="tag">TEST</span><ul><li>Epigenetic aging and transposon dysregulation reflect size-related lifespan compression in dogs.</li><li>Somatic epimutations cap genetic determinism in the human diploid chromatin epigenome.</li><li>A telomere-to-telomere map of somatic mutation burden and functional impact in a cancer.</li></ul></a></div></div><script>
 var tb=document.getElementById('theme');
 function paint(){if(tb)tb.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀ ライト':'🌙 ダーク';}
 if(tb)tb.onclick=function(){var n=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('pd-theme',n);}catch(e){}paint();};
 paint();
 
 (function(){
+var KEY='pd-fav-v1',mem={},ok=true;
+function load(){try{var s=localStorage.getItem(KEY);mem=s?(JSON.parse(s)||{}):{};}catch(e){ok=false;}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(mem));}catch(e){ok=false;}}
+load();
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function cnt(){return Object.keys(mem).length}
+function tags(){var set={};Object.keys(mem).forEach(function(k){(mem[k].g||[]).forEach(function(t){set[t]=1})});return Object.keys(set).sort();}
+function parseTags(s){var out=[];String(s).split(/[,、，\s]+/).forEach(function(t){t=t.replace(/^#+/,'').trim();if(t&&out.indexOf(t)<0)out.push(t)});return out;}
+function upd(){var b=document.getElementById('favbtn');if(b)b.textContent='★ '+cnt();}
+function notify(){upd();document.dispatchEvent(new CustomEvent('pdfav'));}
+function refresh(c){
+ var id=c.dataset.pmid,f=mem[id],st=c.querySelector('.star'),fl=c.querySelector('.fline');
+ c.classList.toggle('faved',!!f);
+ if(st){st.classList.toggle('on',!!f);st.textContent=f?'★':'☆';}
+ if(fl){var h='';if(f){(f.g||[]).forEach(function(t){h+='<span class="ftag">#'+esc(t)+'</span>'});if(f.m)h+='<span class="fm">'+esc(f.m)+'</span>';}fl.innerHTML=h;fl.style.display=h?'':'none';}
+ var ti=c.querySelector('.ft'),mm=c.querySelector('.fmm');
+ if(ti&&document.activeElement!==ti)ti.value=f?(f.g||[]).join(', '):'';
+ if(mm&&document.activeElement!==mm)mm.value=f?(f.m||''):'';
+}
+function make(c){
+ var id=c.dataset.pmid;
+ if(!mem[id]){var t=c.querySelector('.title'),j=c.querySelector('.meta b');
+  mem[id]={ti:t?t.textContent:'',j:j?j.textContent:'',d:c.dataset.date||'',g:[],m:'',u:Date.now()};}
+ return mem[id];
+}
+function decorate(root){
+ [].slice.call((root||document).querySelectorAll('details.card[data-pmid]')).forEach(function(c){
+  if(c._fav){refresh(c);return;}
+  var sum=c.querySelector('summary'),chev=c.querySelector('.chev'),head=c.querySelector('.head'),body=c.querySelector('.body');
+  if(!sum||!head||!body)return;
+  c._fav=1;
+  var st=document.createElement('button');st.type='button';st.className='star';st.title='お気に入り';st.textContent='☆';
+  sum.insertBefore(st,chev);
+  var fl=document.createElement('div');fl.className='fline';fl.style.display='none';head.appendChild(fl);
+  var ed=document.createElement('div');ed.className='fedit';
+  ed.innerHTML='<input type="text" class="ft" placeholder="タグ（, 区切り）" autocomplete="off" maxlength="80"><input type="text" class="fmm" placeholder="メモ" autocomplete="off" maxlength="300">';
+  body.insertBefore(ed,body.firstChild);
+  var ti=ed.querySelector('.ft'),mm=ed.querySelector('.fmm');
+  st.onclick=function(e){e.preventDefault();e.stopPropagation();
+   var id=c.dataset.pmid,f=mem[id];
+   if(f){if((f.m||(f.g&&f.g.length))&&!confirm('メモ・タグも削除されます。よろしいですか？'))return;delete mem[id];}
+   else make(c);
+   save();refresh(c);notify();};
+  function commit(){var id=c.dataset.pmid,g=parseTags(ti.value),m=mm.value.trim();
+   if(!mem[id]&&!g.length&&!m)return;
+   var f=make(c);f.g=g;f.m=m;f.u=Date.now();save();refresh(c);notify();}
+  [ti,mm].forEach(function(i){i.onchange=commit;i.onkeydown=function(e){if(e.key==='Enter')i.blur();};});
+  refresh(c);
+ });
+}
+function panel(){
+ var p=document.getElementById('favpanel');
+ if(p){p.remove();return;}
+ p=document.createElement('div');p.id='favpanel';
+ p.innerHTML='<div><b>★ お気に入り '+cnt()+' 件</b></div><div class="fpn">このブラウザに保存されています（端末間では同期されません）。別のPCへ移すときは、書き出して読み込んでください。</div>'+
+  (ok?'':'<div class="fpn bad">ブラウザの保存が使えないため、このページを閉じると消えます。</div>')+
+  '<div class="fpb"><button type="button" class="btn" id="fexp">書き出し</button><button type="button" class="btn" id="fimp">読み込み</button><input type="file" id="ffile" accept=".json,application/json" hidden></div>';
+ document.body.appendChild(p);
+ document.getElementById('fexp').onclick=function(){
+  var blob=new Blob([JSON.stringify({ver:1,favs:mem},null,1)],{type:'application/json'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='paper-favorites-'+new Date().toISOString().slice(0,10)+'.json';
+  document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);};
+ var inp=document.getElementById('ffile');
+ document.getElementById('fimp').onclick=function(){inp.click();};
+ inp.onchange=function(){var fl=inp.files&&inp.files[0];if(!fl)return;var rd=new FileReader();
+  rd.onload=function(){try{
+   var o=JSON.parse(rd.result),src=o.favs||o,n=0;
+   Object.keys(src).forEach(function(id){var f=src[id];if(!f||typeof f!=='object')return;
+    if(!mem[id]||(f.u||0)>(mem[id].u||0)){mem[id]={ti:String(f.ti||''),j:String(f.j||''),d:String(f.d||''),g:Array.isArray(f.g)?f.g.map(String):[],m:String(f.m||''),u:Number(f.u)||Date.now()};n++;}});
+   save();decorate(document);notify();alert(n+' 件を読み込みました（合計 '+cnt()+' 件）');p.remove();
+  }catch(e){alert('読み込めませんでした。書き出したJSONファイルを選んでください。');}};
+  rd.readAsText(fl);};
+}
+var fb=document.getElementById('favbtn');
+if(fb)fb.onclick=function(e){e.stopPropagation();panel();};
+document.addEventListener('click',function(e){var p=document.getElementById('favpanel');if(p&&!p.contains(e.target))p.remove();});
+window.addEventListener('storage',function(e){if(e.key===KEY){load();decorate(document);notify();}});
+window.PDFAV={get:function(id){return mem[id]||null},tags:tags,decorate:decorate,count:cnt};
+decorate(document);upd();
+})();
+
+(function(){
 var $=function(id){return document.getElementById(id)};
 var SECN={original:'原著論文',news:'ニュース・コメント等',review:'Review論文',other:'その他'};
 var manifest=null,DATA=[],loaded={},loading={},shown=50,touched=false,timer=null,lastKw=[],lastAu=[],lastRes=[];
-var qEl=$('sq'),auEl=$('sau'),jEl=$('sj'),fromEl=$('sfrom'),toEl=$('sto'),secEl=$('ssec'),tpEl=$('stopic'),sortEl=$('ssort'),stat=$('sstat'),resBox=$('results'),issues=$('issues'),panel=$('spanel');
+var qEl=$('sq'),auEl=$('sau'),jEl=$('sj'),fromEl=$('sfrom'),toEl=$('sto'),secEl=$('ssec'),tpEl=$('stopic'),sortEl=$('ssort'),stat=$('sstat'),resBox=$('results'),issues=$('issues'),panel=$('spanel'),sfavEl=$('sfav'),sftEl=$('sftag');
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function pad(n){return (n<10?'0':'')+n}
 function ymd(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
@@ -120,8 +215,11 @@ function prep(r){
  r._au=(r.a||[]).join(', ').toLowerCase();r._j=String(r.j||'').toLowerCase();r._d=r.d||String(r.i||'').slice(0,10);
  r.r=r.r||0;r.f=r.f||0;
 }
+/* ★のみ/タグ指定中で、期間を自分で選んでいないときは、全期間を対象にする */
+function wide(){return (sfavEl.checked||sftEl.value)&&!touched;}
 function neededMonths(){
  if(!manifest)return [];
+ if(wide())return manifest.months.map(function(x){return x.m});
  var f=fromEl.value,t=toEl.value;
  return manifest.months.map(function(x){return x.m}).filter(function(m){return (!t||m+'-01'<=t)&&(!f||m+'-31'>=f)});
 }
@@ -163,7 +261,7 @@ function tierFn(res){
 function card(r,tier,kwT,auT){
  var au=r.a||[],line=au.length<=4?au.join(', '):au.slice(0,3).join(', ')+', …, '+au[au.length-1];
  var tags=(r.tp||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join('')+(r.h||[]).map(function(t){return '<span class="tag kw">'+esc(t)+'</span>'}).join('');
- return '<details class="card t'+tier+'"><summary><div class="badge" title="優先度スコア">'+(r.r||'·')+'</div><div class="head">'+
+ return '<details class="card t'+tier+'" data-pmid="'+r.p+'" data-date="'+esc(r._d)+'"><summary><div class="badge" title="優先度スコア">'+(r.r||'·')+'</div><div class="head">'+
   '<div class="meta"><b>'+esc(r.j)+'</b>'+(r.f?' · IF '+r.f:'')+' · '+esc(r._d)+'<span class="tagsec">'+esc(SECN[r.s]||'')+'</span></div>'+
   '<div class="title">'+hl(r.t,kwT)+'</div><div class="au">'+hl(line,auT)+'</div></div><div class="chev">▾</div></summary>'+
   '<div class="body"><div class="cols"><section><h4>Abstract</h4><p>'+(r.ab?hl(r.ab,kwT):'<span class="note">PubMedに抄録がありません</span>')+'</p></section></div>'+
@@ -179,20 +277,24 @@ function render(){
  if(!res.length)html+='<p class="rnote">該当する論文がありません。期間を「すべて」にするか、条件を減らしてみてください。</p>';
  html+=res.slice(0,shown).map(function(r){return card(r,tier(r.r),lastKw,lastAu)}).join('');
  if(res.length>shown)html+='<button class="btn more" id="more" type="button">さらに表示（残り '+(res.length-shown).toLocaleString()+' 件）</button>';
- resBox.innerHTML=html;
+ resBox.innerHTML=html;PDFAV.decorate(resBox);
  var mb=$('more');if(mb)mb.onclick=function(){shown+=50;render();};
 }
 function run(){
  var kw0=parseQ(qEl.value),ag0=groups(auEl.value),jg0=groups(jEl.value);
- var active=kw0.inc.length||kw0.exc.length||ag0.length||jg0.length||secEl.value||tpEl.value||touched;
+ var active=kw0.inc.length||kw0.exc.length||ag0.length||jg0.length||secEl.value||tpEl.value||touched||sfavEl.checked||sftEl.value;
  if(!active){resBox.hidden=true;resBox.innerHTML='';issues.hidden=false;return;}
  ensure(function(){
-  var kw=parseQ(qEl.value),ag=groups(auEl.value),jg=groups(jEl.value),f=fromEl.value,t=toEl.value,sc=secEl.value,tp=tpEl.value;
+  var kw=parseQ(qEl.value),ag=groups(auEl.value),jg=groups(jEl.value),f=fromEl.value,t=toEl.value,sc=secEl.value,tp=tpEl.value,fo=sfavEl.checked,ft=sftEl.value,wd=wide();
   var res=DATA.filter(function(r){
-   if(f&&r._d<f)return false;if(t&&r._d>t)return false;
+   if(!wd){if(f&&r._d<f)return false;if(t&&r._d>t)return false;}
+   var fx=PDFAV.get(r.p);
+   if(fo&&!fx)return false;
+   if(ft&&(!fx||(fx.g||[]).indexOf(ft)<0))return false;
+   var hay=fx?r._kw+' '+((fx.m||'')+' '+(fx.g||[]).join(' ')).toLowerCase():r._kw;
    if(sc&&r.s!==sc)return false;if(tp&&(r.tp||[]).indexOf(tp)<0)return false;
-   if(kw.inc.some(function(x){return r._kw.indexOf(x)<0}))return false;
-   if(kw.exc.some(function(x){return r._kw.indexOf(x)>=0}))return false;
+   if(kw.inc.some(function(x){return hay.indexOf(x)<0}))return false;
+   if(kw.exc.some(function(x){return hay.indexOf(x)>=0}))return false;
    if(ag.length&&!anyG(r._au,ag))return false;
    if(jg.length&&!anyG(r._j,jg))return false;
    return true;
@@ -203,10 +305,12 @@ function run(){
 }
 function later(){clearTimeout(timer);timer=setTimeout(run,220);}
 [qEl,auEl,jEl].forEach(function(e){e.addEventListener('input',later);e.addEventListener('keydown',function(ev){if(ev.key==='Enter'){clearTimeout(timer);run();}});});
-[secEl,tpEl,sortEl].forEach(function(e){e.addEventListener('change',run);});
+[secEl,tpEl,sortEl,sfavEl,sftEl].forEach(function(e){e.addEventListener('change',run);});
 [fromEl,toEl].forEach(function(e){e.addEventListener('change',function(){touched=true;[].slice.call(document.querySelectorAll('.spanel .chip')).forEach(function(c){c.classList.remove('on')});run();});});
 [].slice.call(document.querySelectorAll('.spanel .chip')).forEach(function(c){c.onclick=function(){touched=true;setPreset(c.dataset.p);run();};});
-$('sclear').onclick=function(){qEl.value='';auEl.value='';jEl.value='';secEl.value='';tpEl.value='';sortEl.value='date';touched=false;setPreset('3m');run();};
+$('sclear').onclick=function(){qEl.value='';auEl.value='';jEl.value='';secEl.value='';tpEl.value='';sfavEl.checked=false;sftEl.value='';sortEl.value='date';touched=false;setPreset('3m');run();};
+function fillFT(){var cur=sftEl.value,ts=PDFAV.tags();sftEl.innerHTML='<option value="">すべてのタグ</option>'+ts.map(function(t){return '<option>'+esc(t)+'</option>'}).join('');sftEl.value=cur;}
+document.addEventListener('pdfav',fillFT);fillFT();
 setPreset('3m');
 fetch('data/manifest.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(m){
  if(!m||!m.months||!m.months.length)throw 0;
